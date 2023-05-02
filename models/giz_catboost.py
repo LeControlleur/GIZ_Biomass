@@ -1,5 +1,5 @@
-from preprocessing import BiomassPreprocesser
 from catboost import CatBoostRegressor
+from preprocessing import BiomassPreprocesser
 
 
 if __name__=="__main__":
@@ -38,5 +38,5 @@ if __name__=="__main__":
                     plot=True)
 	
 	print("Training end, saving model ...")
-	catboost_model.save_model("model_files/model_50", format="onnx")
+	catboost_model.save_model("model_files/catboost50_all_features", format="onnx")
     
