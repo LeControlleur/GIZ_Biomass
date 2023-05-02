@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "giz-biomass"
+version = "0.1.0"
+description = ""
+authors = ["LeControlleur <sammy.bini@yahoo.fr>"]
+readme = "README.md"
+packages = [{include = "giz_biomass"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+catboost = "^1.2"
+xgboost = "^1.7.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

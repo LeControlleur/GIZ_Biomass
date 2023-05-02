@@ -146,7 +146,11 @@ class BiomassPreprocesser:
         return selected_features
 
 
-    def data_transformer(X : np.array, standardize : bool = True, compute_standardize_variables : bool = True, selected_features : np.array = None) -> np.array : 
+    def data_transformer(X : np.array, 
+                        standardize : bool = True, 
+                        compute_standardize_variables : bool = True, 
+                        selected_features : np.array = None,
+                        use_selected_features : bool = True) -> np.array : 
 
         if selected_features is None:
             selected_features = BiomassPreprocesser.selected_features
@@ -155,7 +159,7 @@ class BiomassPreprocesser:
         features_selection_layer = lambda X, features : np.array(X[:, features])
 
         images_flattened = flatten_layer(X)
-        images_resized = features_selection_layer(images_flattened, selected_features)
+        images_resized = features_selection_layer(images_flattened, selected_features) if use_selected_features else images_flattened
         if standardize :
             if compute_standardize_variables:
                 BiomassPreprocesser.MEAN = np.mean(images_resized, axis=0)

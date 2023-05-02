@@ -18,10 +18,11 @@ if __name__=="__main__":
     
 	print("Data transformation...")
 	train_images_transformed = BiomassPreprocesser.data_transformer(
-		train_images
+		train_images,
+		use_selected_features=False
 	)
 
-	params = {'iterations': [100],
+	params = {'iterations': [50],
         #       'iterations': [50, 100, 200],
             'depth': [8, 15, 25],
             'l2_leaf_reg': [0.2, 0.8, 3]}
@@ -37,5 +38,5 @@ if __name__=="__main__":
                     plot=True)
 	
 	print("Training end, saving model ...")
-	catboost_model.save_model("model_files/model_100", format="onnx")
+	catboost_model.save_model("model_files/model_50", format="onnx")
     
