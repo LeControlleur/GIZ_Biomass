@@ -31,7 +31,7 @@ if __name__=="__main__":
         'colsample_bylevel': np.arange(0.4, 1.0, 0.1),
         'n_estimators': [100, 500, 1000, 5000, 10000]}
 	
-	xgboost_model = XGBRegressor(loss_function='RMSE')
+	xgboost_model = XGBRegressor()
 	print("XGBoost regression application...")
 	
 	random_search = RandomizedSearchCV(
