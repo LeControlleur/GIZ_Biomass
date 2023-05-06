@@ -1,2 +1,0 @@
-Catboost :
-    After reducing dimentsion and select features : 50,40 - RMSE
